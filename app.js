@@ -168,6 +168,7 @@ function resetGame() {
   hintDisplay.textContent = `💡 ${hintCount}`;
   startStage();
 }
-
+window.useHint = useHint;
+window.resetGame = resetGame;
 // Oyunu başlatma fonksiyonunu çağırır
 startStage();
