@@ -15,7 +15,8 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: 'style.css', to: 'public' }
+        { from: 'style.css', to: '.' }, // style.css dosyasını public köküne kopyala
+        { from: 'favicon.ico', to: '.' } // Favicon'u da aynı şekilde kopyalayın
       ]
     })
   ]
