@@ -8,7 +8,7 @@ const hangmanParts = [
 const stages = [
   { level: 1, category: "meyveler", words: ["ELMA", "ARMUT", "MUZ", "KİVİ", "PORTAKAL"] },
   { level: 2, category: "hayvanlar", words: ["KEDİ", "KÖPEK", "ASLAN", "KAPLAN", "FİL"] },
-  { level: 3, category: "araçlar", words: ["ARABA", "OTOBÜS", "BİSİKLET", "UÇAK", "GEMİ"] },
+    { level: 3, category: "araçlar", words: ["ARABA", "OTOBÜS", "BİSİKLET", "UÇAK", "GEMİ"] },
   { level: 4, category: "ülkeler", words: ["TÜRKİYE", "İTALYA", "İSPANYA", "JAPONYA", "BREZİLYA"] },
   { level: 5, category: "renkler", words: ["KIRMIZI", "MAVİ", "YEŞİL", "SARI", "TURUNCU"] },
   { level: 6, category: "sebzeler", words: ["DOMATES", "BİBER", "SALATALIK", "PIRASA", "ISPANAK"] },
