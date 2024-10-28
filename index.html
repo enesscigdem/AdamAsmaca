@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peluş Ayıcık Adam Asmaca</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="game-container">
+  <header>
+    <h1>Peluş Ayıcık Adam Asmaca</h1>
+    <div class="score-board">
+      <span id="score">Puan: 0</span>
+      <span id="hint" class="hint-button" onclick="useHint()">💡 3</span>
+    </div>
+  </header>
+
+  <p id="story" class="story">Ayıcık bahçede meyveleri bulmak istiyor! Hadi ona yardım et ve meyveyi bul!</p>
+
+  <div class="status-bar">
+    <div class="level">Aşama: <span id="level">1</span>/10</div>
+  </div>
+
+  <div class="game-layout">
+    <div class="hangman-drawing">
+      <div class="fluffy-frame base"></div>
+      <div class="fluffy-frame pole"></div>
+      <div class="fluffy-frame top-bar"></div>
+      <div class="rope"></div>
+      <div class="head"></div>
+      <div class="body"></div>
+      <div class="arm-left"></div>
+      <div class="arm-right"></div>
+      <div class="leg-left"></div>
+      <div class="leg-right"></div>
+    </div>
+
+    <div>
+      <div id="word-display" class="word-display"></div>
+      <div class="keyboard" id="keyboard"></div>
+      <p id="message" class="message"></p>
+      <button id="reset-btn" class="reset-btn" onclick="resetGame()" style="display: none;">Yeniden Başla</button>
+    </div>
+  </div>
+</div>
+
+<div id="end-screen" class="end-screen" style="display: none;">
+  <div class="end-message" id="end-message"></div>
+  <button onclick="resetGame()" class="reset-btn">Yeniden Başla</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

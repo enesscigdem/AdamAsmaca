@@ -1,0 +1,257 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #FFE0B2, #FFCC80);
+  overflow: hidden;
+}
+
+.game-container {
+  text-align: center;
+  max-width: 900px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  border: 5px solid #FF9800;
+  position: relative;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+h1 {
+  color: #FF9800;
+  font-size: 2.2em;
+  font-weight: bold;
+}
+
+.score-board {
+  font-size: 1.2em;
+  color: #FF9800;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.hint-button {
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #FF9800;
+  font-weight: bold;
+}
+
+.story {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.status-bar {
+  font-size: 1.2em;
+  color: #FF9800;
+  margin: 10px 0;
+}
+
+.game-layout {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.word-display {
+  font-size: 2.5em;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.letter-slot {
+  width: 50px;
+  height: 60px;
+  border-bottom: 3px solid #777;
+  font-size: 2em;
+  color: #333;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hangman-drawing {
+  position: relative;
+  height: 300px;
+  width: 200px;
+  margin-right: 20px;
+}
+
+.fluffy-frame, .rope, .head, .body, .arm-left, .arm-right, .leg-left, .leg-right {
+  position: absolute;
+  background-color: #FFB74D;
+  display: none;
+}
+
+/* Adam asma çerçevesi */
+.base {
+  width: 100%;
+  height: 12px;
+  bottom: 0;
+  left: 0;
+}
+
+.pole {
+  width: 12px;
+  height: 250px;
+  left: 30px;
+  bottom: 12px;
+}
+
+.top-bar {
+  width: 120px;
+  height: 12px;
+  left: 30px;
+  bottom: 250px;
+}
+
+.rope {
+  width: 6px;
+  height: 30px;
+  left: 100px;
+  bottom: 220px;
+}
+
+.head {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  left: 80px;
+  bottom: 170px;
+  background-color: #FFCC80;
+}
+
+.body {
+  width: 10px;
+  height: 80px;
+  left: 97px;
+  bottom: 90px;
+}
+
+.arm-left {
+  width: 10px;
+  height: 50px;
+  left: 65px;
+  bottom: 140px;
+  transform: rotate(45deg);
+}
+
+.arm-right {
+  width: 10px;
+  height: 50px;
+  left: 115px;
+  bottom: 140px;
+  transform: rotate(-45deg);
+}
+
+.leg-left {
+  width: 10px;
+  height: 50px;
+  left: 75px;
+  bottom: 40px;
+  transform: rotate(-45deg);
+}
+
+.leg-right {
+  width: 10px;
+  height: 50px;
+  left: 105px;
+  bottom: 40px;
+  transform: rotate(45deg);
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.key {
+  padding: 15px;
+  background-color: #FFEB3B;
+  border-radius: 50%;
+  font-size: 1.4em;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.key:hover {
+  background-color: #FFC107;
+  transform: scale(1.1);
+}
+
+.key:disabled {
+  background-color: #FF7043;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.reset-btn {
+  background-color: #FF9800;
+  padding: 12px 24px;
+  border: none;
+  color: #fff;
+  font-size: 1.2em;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(255, 152, 0, 0.3);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.reset-btn:hover {
+  background-color: #FB8C00;
+  transform: scale(1.05);
+}
+
+.message {
+  font-size: 1.4em;
+  color: #E64A19;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* Oyun sonu ekranı */
+.end-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.end-message {
+  font-size: 2em;
+  color: #FF9800;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
