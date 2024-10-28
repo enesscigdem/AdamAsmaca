@@ -6,6 +6,7 @@
 }
 
 body {
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -306,52 +307,86 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
 }
-
-/* Küçük ekranlar için (mobil cihazlar) */
+/* Mobil uyum */
 @media (max-width: 768px) {
   .game-container {
-    max-width: 90%;
-    padding: 15px;
+    width: 90%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
-  h1 {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  /* Adam asmaca figürü üstte ortalanır */
+  .hangman-drawing {
+    width: 120px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  /* Çizim elemanları daha küçük olacak şekilde ayarlanır */
+  .base { width: 100px; height: 8px; }
+  .pole { width: 8px; height: 100px; }
+  .top-bar { width: 80px; height: 8px; }
+  .rope { width: 4px; height: 30px; }
+  .head { width: 30px; height: 30px; border-radius: 50%; }
+  .body { width: 8px; height: 50px; }
+  .arm-left, .arm-right, .leg-left, .leg-right {
+    width: 8px;
+    height: 30px;
+  }
+
+  .word-display {
     font-size: 2em;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
   }
 
   .keyboard {
+    display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    padding: 0;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .key {
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 50%;
+  }
+}
+
+/* Daha küçük ekranlar (telefon) */
+@media (max-width: 480px) {
+  .hangman-drawing {
+    width: 100px;
+    height: 150px;
+  }
+
+  .keyboard {
+    grid-template-columns: repeat(5, 1fr);
   }
 
   .key {
     padding: 10px;
-    font-size: 1em;
-  }
-
-  .word-display {
-    font-size: 2em;
-    gap: 8px;
-  }
-
-  .hangman-drawing {
-    width: 150px;
-    height: 200px;
-  }
-}
-
-/* Daha küçük ekranlar için (örneğin telefonlar) */
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.8em;
-  }
-
-  .score-board,
-  .status-bar {
-    font-size: 1em;
+    font-size: 0.8em;
   }
 
   .word-display {
     font-size: 1.5em;
+    gap: 8px;
   }
 }
